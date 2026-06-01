@@ -4875,6 +4875,321 @@
       "has_script": false,
       "editable_fields": [],
       "repeater_item_schema": []
+    },
+    {
+      "id": "trust-faculty",
+      "name": "Trust Faculty",
+      "category": "social",
+      "desc": "Две бегущие ленты карточек преподавателей (доверие/регалии)",
+      "file": "blocks/trust-faculty.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(1) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(2) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(3) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(4) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=4"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(5) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=5"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(1) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=6"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(2) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=7"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(3) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=8"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(4) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=9"
+        },
+        {
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(5) .af-trust__avatar",
+          "default": "https://placehold.co/112x112/de6518/fff?text=10"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-trust__heading",
+          "type": "text",
+          "default": "Taught by 105+ artists from around the world"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-trust__sub",
+          "type": "text",
+          "default": "AWS, NWS, RWS signature · IWS officers · brand ambassadors for Daniel Smith, Winsor & Newton, Escoda — from 20+ countries."
+        },
+        {
+          "key": "foot",
+          "selector": ".af-trust__foot",
+          "type": "html",
+          "default": "<strong>20 of 105+</strong> · Brand ambassadors for Daniel Smith, Winsor & Newton, Escoda."
+        },
+        {
+          "key": "r1c1_avatar_src",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(1) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r1c1_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(1) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Andy Evansen"
+        },
+        {
+          "key": "r1c1_name",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(1) .af-trust__name",
+          "type": "text",
+          "default": "Andy Evansen"
+        },
+        {
+          "key": "r1c1_cred",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(1) .af-trust__cred",
+          "type": "text",
+          "default": "AWS · PAPA · TWSA"
+        },
+        {
+          "key": "r1c2_avatar_src",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(2) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r1c2_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(2) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Keiko Tanabe"
+        },
+        {
+          "key": "r1c2_name",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(2) .af-trust__name",
+          "type": "text",
+          "default": "Keiko Tanabe"
+        },
+        {
+          "key": "r1c2_cred",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(2) .af-trust__cred",
+          "type": "text",
+          "default": "NWS · AWS · AIS"
+        },
+        {
+          "key": "r1c3_avatar_src",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(3) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r1c3_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(3) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Amit Kapoor"
+        },
+        {
+          "key": "r1c3_name",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(3) .af-trust__name",
+          "type": "text",
+          "default": "Amit Kapoor"
+        },
+        {
+          "key": "r1c3_cred",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(3) .af-trust__cred",
+          "type": "text",
+          "default": "IWS Global VP"
+        },
+        {
+          "key": "r1c4_avatar_src",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(4) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r1c4_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(4) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Janine Gallizia"
+        },
+        {
+          "key": "r1c4_name",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(4) .af-trust__name",
+          "type": "text",
+          "default": "Janine Gallizia"
+        },
+        {
+          "key": "r1c4_cred",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(4) .af-trust__cred",
+          "type": "text",
+          "default": "Art of Watercolour"
+        },
+        {
+          "key": "r1c5_avatar_src",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(5) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r1c5_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(5) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "David Poxon"
+        },
+        {
+          "key": "r1c5_name",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(5) .af-trust__name",
+          "type": "text",
+          "default": "David Poxon"
+        },
+        {
+          "key": "r1c5_cred",
+          "selector": ".af-trust__rail:nth-child(1) .af-trust__card:nth-child(5) .af-trust__cred",
+          "type": "text",
+          "default": "RWS · NWS America"
+        },
+        {
+          "key": "r2c1_avatar_src",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(1) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r2c1_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(1) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Patricia Guzmán"
+        },
+        {
+          "key": "r2c1_name",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(1) .af-trust__name",
+          "type": "text",
+          "default": "Patricia Guzmán"
+        },
+        {
+          "key": "r2c1_cred",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(1) .af-trust__cred",
+          "type": "text",
+          "default": "30+ awards · MSW"
+        },
+        {
+          "key": "r2c2_avatar_src",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(2) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r2c2_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(2) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Pasqualino Fracasso"
+        },
+        {
+          "key": "r2c2_name",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(2) .af-trust__name",
+          "type": "text",
+          "default": "Pasqualino Fracasso"
+        },
+        {
+          "key": "r2c2_cred",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(2) .af-trust__cred",
+          "type": "text",
+          "default": "AWS · AIA · NWS"
+        },
+        {
+          "key": "r2c3_avatar_src",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(3) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r2c3_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(3) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Ze Ze Lai"
+        },
+        {
+          "key": "r2c3_name",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(3) .af-trust__name",
+          "type": "text",
+          "default": "Ze Ze Lai"
+        },
+        {
+          "key": "r2c3_cred",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(3) .af-trust__cred",
+          "type": "text",
+          "default": "IWS Global VP"
+        },
+        {
+          "key": "r2c4_avatar_src",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(4) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r2c4_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(4) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Joe Dowden"
+        },
+        {
+          "key": "r2c4_name",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(4) .af-trust__name",
+          "type": "text",
+          "default": "Joe Dowden"
+        },
+        {
+          "key": "r2c4_cred",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(4) .af-trust__cred",
+          "type": "text",
+          "default": "RWS · SAA"
+        },
+        {
+          "key": "r2c5_avatar_src",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(5) .af-trust__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=112&h=112&fit=crop"
+        },
+        {
+          "key": "r2c5_avatar_alt",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(5) .af-trust__avatar",
+          "type": "attr:alt",
+          "default": "Hazel Soan"
+        },
+        {
+          "key": "r2c5_name",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(5) .af-trust__name",
+          "type": "text",
+          "default": "Hazel Soan"
+        },
+        {
+          "key": "r2c5_cred",
+          "selector": ".af-trust__rail:nth-child(2) .af-trust__card:nth-child(5) .af-trust__cred",
+          "type": "text",
+          "default": "UK · 30+ years"
+        }
+      ],
+      "recommended_next": []
     }
   ]
 }
