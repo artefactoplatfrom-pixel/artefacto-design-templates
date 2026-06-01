@@ -5190,6 +5190,131 @@
         }
       ],
       "recommended_next": []
+    },
+    {
+      "id": "gallery-carousel",
+      "name": "Gallery Carousel",
+      "category": "social",
+      "desc": "Коверфлоу-карусель работ (центр крупный, точки + стрелки)",
+      "file": "blocks/gallery-carousel.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-gallery-carousel__slide:nth-child(1) img",
+          "default": "https://placehold.co/900x600/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-gallery-carousel__slide:nth-child(2) img",
+          "default": "https://placehold.co/900x600/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-gallery-carousel__slide:nth-child(3) img",
+          "default": "https://placehold.co/900x600/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-gallery-carousel__slide:nth-child(4) img",
+          "default": "https://placehold.co/900x600/de6518/fff?text=4"
+        },
+        {
+          "selector": ".af-gallery-carousel__slide:nth-child(5) img",
+          "default": "https://placehold.co/900x600/de6518/fff?text=5"
+        },
+        {
+          "selector": ".af-gallery-carousel__slide:nth-child(6) img",
+          "default": "https://placehold.co/900x600/de6518/fff?text=6"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-gallery-carousel__heading",
+          "type": "text",
+          "default": "Paintings from our students"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-gallery-carousel__sub",
+          "type": "text",
+          "default": "Real work from painters who took the course — and the skies they brought to life."
+        },
+        {
+          "key": "img1_src",
+          "selector": ".af-gallery-carousel__slide:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=900&fit=max"
+        },
+        {
+          "key": "img1_alt",
+          "selector": ".af-gallery-carousel__slide:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Student artwork 1"
+        },
+        {
+          "key": "img2_src",
+          "selector": ".af-gallery-carousel__slide:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=900&fit=max"
+        },
+        {
+          "key": "img2_alt",
+          "selector": ".af-gallery-carousel__slide:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Student artwork 2"
+        },
+        {
+          "key": "img3_src",
+          "selector": ".af-gallery-carousel__slide:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=900&fit=max"
+        },
+        {
+          "key": "img3_alt",
+          "selector": ".af-gallery-carousel__slide:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Student artwork 3"
+        },
+        {
+          "key": "img4_src",
+          "selector": ".af-gallery-carousel__slide:nth-child(4) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&fit=max"
+        },
+        {
+          "key": "img4_alt",
+          "selector": ".af-gallery-carousel__slide:nth-child(4) img",
+          "type": "attr:alt",
+          "default": "Student artwork 4"
+        },
+        {
+          "key": "img5_src",
+          "selector": ".af-gallery-carousel__slide:nth-child(5) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=900&fit=max"
+        },
+        {
+          "key": "img5_alt",
+          "selector": ".af-gallery-carousel__slide:nth-child(5) img",
+          "type": "attr:alt",
+          "default": "Student artwork 5"
+        },
+        {
+          "key": "img6_src",
+          "selector": ".af-gallery-carousel__slide:nth-child(6) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=900&fit=max"
+        },
+        {
+          "key": "img6_alt",
+          "selector": ".af-gallery-carousel__slide:nth-child(6) img",
+          "type": "attr:alt",
+          "default": "Student artwork 6"
+        }
+      ],
+      "recommended_next": []
     }
   ]
 }
