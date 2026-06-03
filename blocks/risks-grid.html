@@ -2,12 +2,8 @@
 <!-- Artefacto Block: Risks Grid — карточки проблем/болей с иконками -->
 <style>
     .af-risks {
-        --af-primary: #de6518;
         --af-bg: #ffffff;
         --af-card-bg: #f4efe9;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg);
@@ -27,11 +23,11 @@
         margin-bottom: clamp(12px, 2vw, 20px);
     }
     .af-risks__subtitle {
-        font-size: clamp(18px, 1.5vw, 20px);
-        line-height: 1.7;
+        font-size: clamp(16px, 1.5vw, 18px);
+        line-height: 1.6;
         text-align: center;
         color: var(--af-text-light);
-        max-width: 700px;
+        max-width: 640px;
         margin: 0 auto clamp(32px, 5vw, 56px);
     }
     .af-risks__grid {
@@ -41,26 +37,27 @@
     }
     .af-risks__card {
         background: var(--af-card-bg);
-        border-radius: var(--af-radius);
-        padding: clamp(24px, 3vw, 36px);
+        border-radius: var(--af-radius-lg);
+        padding: clamp(26px, 3vw, 36px);
         text-align: center;
+        box-shadow: var(--af-shadow-card);
         transition: transform 0.3s, box-shadow 0.3s;
     }
     .af-risks__card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        transform: translateY(-3px);
+        box-shadow: var(--af-shadow-card-hover);
     }
     .af-risks__icon {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 16px;
-        background: var(--af-primary);
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 18px;
+        background: var(--af-orange-light);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 28px;
     }
+    .af-risks__icon svg { width: 28px; height: 28px; color: #8a4a12; }
     .af-risks__card-title {
         font-family: var(--af-font-heading);
         font-size: clamp(18px, 1.8vw, 22px);
@@ -68,8 +65,8 @@
         margin-bottom: 8px;
     }
     .af-risks__card-text {
-        font-size: clamp(16px, 1.4vw, 18px);
-        line-height: 1.7;
+        font-size: clamp(15px, 1.4vw, 16px);
+        line-height: 1.6;
         color: var(--af-text-light);
     }
     @media (max-width: 900px) {
@@ -80,7 +77,7 @@
     }
 
     *:focus-visible {
-        outline: 3px solid var(--af-primary, #de6518);
+        outline: 3px solid var(--af-primary);
         outline-offset: 3px;
         border-radius: 4px;
     }
@@ -91,32 +88,32 @@
         <p class="af-risks__subtitle">Многие ученики приходят к нам с такими проблемами — и решают их за первый месяц.</p>
         <div class="af-risks__grid">
             <div class="af-risks__card">
-                <div class="af-risks__icon">😰</div>
+                <div class="af-risks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h9l5 5v13H6z"/><path d="M15 3v5h5"/></svg></div>
                 <h3 class="af-risks__card-title">Страх чистого листа</h3>
                 <p class="af-risks__card-text">Боитесь начать, потому что «а вдруг не получится» — и откладываете снова и снова.</p>
             </div>
             <div class="af-risks__card">
-                <div class="af-risks__icon">🎨</div>
+                <div class="af-risks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.9 1-1.6-.6-.9-.2-2 .9-2H17a4 4 0 0 0 4-4 8 8 0 0 0-9-7.4Z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor"/><circle cx="12" cy="7.5" r="1" fill="currentColor"/><circle cx="16" cy="10" r="1" fill="currentColor"/></svg></div>
                 <h3 class="af-risks__card-title">Грязные цвета</h3>
                 <p class="af-risks__card-text">Смешиваете краски, а результат получается тусклым и мутным вместо чистых оттенков.</p>
             </div>
             <div class="af-risks__card">
-                <div class="af-risks__icon">📐</div>
+                <div class="af-risks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
                 <h3 class="af-risks__card-title">Нет системы</h3>
                 <p class="af-risks__card-text">Смотрите уроки на YouTube, но без структуры навыки не складываются в цельную картину.</p>
             </div>
             <div class="af-risks__card">
-                <div class="af-risks__icon">⏰</div>
+                <div class="af-risks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
                 <h3 class="af-risks__card-title">Нет времени</h3>
                 <p class="af-risks__card-text">Кажется, что для результата нужно рисовать часами — а свободного времени нет.</p>
             </div>
             <div class="af-risks__card">
-                <div class="af-risks__icon">🤷</div>
+                <div class="af-risks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3.3A8.4 8.4 0 1 1 21 11.5Z"/></svg></div>
                 <h3 class="af-risks__card-title">Не с кем обсудить</h3>
                 <p class="af-risks__card-text">Рисуете в одиночестве, без обратной связи — не понимаете, как расти дальше.</p>
             </div>
             <div class="af-risks__card">
-                <div class="af-risks__icon">💸</div>
+                <div class="af-risks__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/><path d="M16 15h2.5"/></svg></div>
                 <h3 class="af-risks__card-title">Потраченные деньги</h3>
                 <p class="af-risks__card-text">Купили дорогие материалы, но они лежат без дела, потому что не знаете как ими пользоваться.</p>
             </div>

@@ -2,8 +2,8 @@
 <!-- Artefacto Block: CTA Minimal — только кнопка по центру -->
 <style>
     .af-cta-minimal {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-bg: #f4efe9;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
@@ -19,7 +19,7 @@
         justify-content: center;
         min-height: 48px;
         padding: clamp(14px, 2vw, 18px) clamp(36px, 5vw, 56px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         background: var(--af-primary);
         color: #fff;
         font-family: var(--af-font-body);
@@ -29,21 +29,21 @@
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 14px rgba(222, 101, 24, 0.3);
+        box-shadow: 0 4px 14px rgba(237, 112, 30, 0.3);
     }
 
     .af-cta-minimal__btn:hover {
         background: var(--af-primary-hover);
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(222, 101, 24, 0.4);
+        box-shadow: 0 6px 20px rgba(237, 112, 30, 0.4);
     }
 
     .af-cta-minimal__btn:active {
         transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(222, 101, 24, 0.2);
+        box-shadow: 0 2px 8px rgba(237, 112, 30, 0.2);
     }
 
-    :focus-visible { outline: 3px solid #de6518; outline-offset: 3px; border-radius: 4px; }
+    :focus-visible { outline: 3px solid var(--af-primary); outline-offset: 3px; border-radius: 4px; }
 </style>
 
 <section class="af-cta-minimal">

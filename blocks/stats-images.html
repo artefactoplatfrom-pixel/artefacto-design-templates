@@ -3,12 +3,9 @@
 <style>
 
     .af-statsimg {
-        --af-primary: #de6518;
+        
         --af-bg: #f4efe9;
         --af-card-bg: #ffffff;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg);
@@ -31,14 +28,15 @@
     }
     .af-statsimg__card {
         background: var(--af-card-bg);
-        border-radius: var(--af-radius);
+        border-radius: var(--af-radius-lg);
         overflow: hidden;
         text-align: center;
+        box-shadow: var(--af-shadow-card);
         transition: transform 0.3s, box-shadow 0.3s;
     }
     .af-statsimg__card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        transform: translateY(-3px);
+        box-shadow: var(--af-shadow-card-hover);
     }
     .af-statsimg__card img {
         width: 100%;
@@ -53,12 +51,12 @@
         font-family: var(--af-font-heading);
         font-size: clamp(26px, 3vw, 35px);
         font-weight: 700;
-        color: var(--af-primary);
+        color: var(--af-orange-bright);
         line-height: 1.1;
         margin-bottom: 4px;
     }
     .af-statsimg__label {
-        font-size: clamp(16px, 1.2vw, 18px);
+        font-size: clamp(14px, 1.2vw, 15px);
         color: var(--af-text-light);
         font-weight: 500;
     }
@@ -66,7 +64,7 @@
     @media (max-width: 400px) { .af-statsimg__grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; } }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }

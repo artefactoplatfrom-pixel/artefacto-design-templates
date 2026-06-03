@@ -1,0 +1,118 @@
+/* ===============================================================
+   Artefacto — Canonical Design Tokens (single source of truth)
+   Generated from the brand book via colors_and_type.css :root.
+   The lp-generator injects this as the LP-level :root token block;
+   the block-library showcase injects it into every preview iframe.
+   Per-block --af-* overrides are stripped at assembly and MUST NOT
+   redefine palette/scale tokens — they inherit from here.
+   =============================================================== */
+
+:root {
+  /* ---- Brand oranges (brand book, page 13) ---- */
+  --af-orange:         #f7aa47;   /* MAIN brand colour. PANTONE 1485 C. Dominant fills, brand surfaces, tagline rule. */
+  --af-orange-bright:  #ed701e;   /* Bright orange. PANTONE 1585 C. Accents, bright details, CTAs. */
+  --af-orange-light:   #fcd8ab;   /* Light orange. PANTONE 7401 C. Text-block underlay, soft backgrounds. */
+
+  /* Action / accent aliases — CTAs use the bright orange */
+  --af-primary:        #ed701e;   /* Primary action: CTA, active links, key accents. */
+  --af-primary-hover:  #d5610f;   /* hover / pressed */
+  --af-amber:          var(--af-orange);        /* alias: the main orange */
+  --af-accent-warm:    var(--af-orange-light);  /* alias kept for older .af-* blocks */
+  --af-success:        #5b965f;   /* Brand green (expressive palette) — status / confirmation. */
+  --af-sand:           var(--af-orange-light);
+
+  /* ---- Ground / surface ---- */
+  --af-bg:             #f4efe9;   /* CREAM — default page ground (team decision). */
+  --af-bg-white:       #ffffff;   /* Pure white — alt ground for image/contrast sections. */
+  --af-bg-cream:       #f4efe9;   /* Alias of the default cream ground. */
+  --af-bg-ink:         #232020;   /* Near-black — dark sections / footers (brand mono dark). */
+  --af-bg-alt:         #ede7df;   /* Slightly deeper cream for banding on cream. */
+  --af-bg-soft-orange: #fdeedd;   /* Very soft orange wash (derived from light orange). */
+  --af-card-bg:        #ffffff;   /* Card on cream — white pops cleanly. */
+  --af-card-bg-alt:    #faf7f3;   /* Card on a tinted/white section. */
+  --af-surface-input:  #ffffff;   /* Inputs read as white on the cream ground. */
+
+  /* ---- Text (warm-neutral near-black ladder) ---- */
+  --af-text:           #2b2b2b;   /* Headings + body. Warm near-black (brand mono dark). */
+  --af-text-strong:    #1a1a1a;   /* Reserved: max-contrast display. */
+  --af-text-light:     #595959;   /* Secondary body, captions, list lead-ins. */
+  --af-text-muted:     #767676;   /* Tertiary captions, helper text. */
+  --af-text-soft:      #969696;   /* Quietest labels. */
+  --af-text-disabled:  #b3b3b3;   /* Disabled / placeholder. */
+  --af-text-inverse:   rgba(255,255,255,0.92);  /* Text on ink / colour. */
+
+  /* ---- Lines ---- */
+  --af-divider:        #ececec;   /* Light internal divider (preferred). */
+  --af-divider-strong: #c9c9c9;   /* Firmer hairline rule. */
+  --af-border-input:   #d9d9d9;   /* Input resting border. */
+
+  /* ---- Expressive / additional palette (brand book, page 14) ----
+     Five hue families × three tones (pale / mid / deep). For course
+     categories, illustration, tags, charts — NEVER dominating over orange. */
+  --af-ex-orange-pale: #fcd8ab;  --af-ex-orange: #f7aa47;  --af-ex-orange-deep: #ed701e;
+  --af-ex-pink-pale:   #f7bfb8;  --af-ex-pink:   #f07386;  --af-ex-pink-deep:   #d92742;
+  --af-ex-purple-pale: #dec7dd;  --af-ex-purple: #c17aac;  --af-ex-purple-deep: #9d467a;
+  --af-ex-blue-pale:   #b4d1da;  --af-ex-blue:   #85b3c7;  --af-ex-blue-deep:   #4d7994;
+  --af-ex-green-pale:  #c4dcae;  --af-ex-green:  #a4c595;  --af-ex-green-deep:  #5b965f;
+
+  /* ---- Radius scale ---- */
+  --af-radius-xs:      4px;       /* legacy chips — avoid in new work */
+  --af-radius-sm:      10px;      /* buttons, inputs, small cards */
+  --af-radius:         12px;      /* default */
+  --af-radius-lg:      20px;      /* large content cards */
+  --af-radius-pill:    50px;      /* status pills, category tags */
+  --af-radius-circle:  50%;       /* avatars, numbered step circles */
+
+  /* ---- Shadow ladders ---- */
+  /* Neutral (content / UI cards) */
+  --af-shadow-1:       0 2px 8px  rgba(43,43,43,0.05);
+  --af-shadow-card:    0 4px 12px rgba(43,43,43,0.09);
+  --af-shadow-card-tinted: 0 4px 16px rgba(237,112,30,0.14);
+  --af-shadow-card-hover:  0 8px 32px rgba(43,43,43,0.14);
+  --af-shadow-modal:       0 8px 28px rgba(43,43,43,0.26);
+  --af-submenu-shadow:     0 8px 28px rgba(43,43,43,0.14);
+  /* Warm (CTA / brand surfaces) — bright-orange ladder */
+  --af-shadow-cta-resting: 0 2px 8px  rgba(237,112,30,0.22);
+  --af-shadow-cta:         0 4px 14px rgba(237,112,30,0.28);
+  --af-shadow-cta-strong:  0 4px 24px rgba(237,112,30,0.42);
+  --af-shadow-cta-hover:   0 6px 20px rgba(237,112,30,0.42);
+  /* Universal focus */
+  --af-focus-ring:         0 0 0 3px rgba(237,112,30,0.18);
+
+  /* ---- Type families ---- */
+  --af-font-logo:    'Source Serif 4', Georgia, serif;  /* Wordmark text fallback — prefer the logo PNGs in assets/logos/. */
+  --af-font-heading: 'Source Serif 4', Georgia, 'Times New Roman', serif;  /* Editorial display serif. */
+  --af-font-body:    'Manrope', system-ui, 'Helvetica Neue', sans-serif;    /* UI / body grotesque. */
+
+  /* ---- Type sizes (fluid) ---- */
+  --af-fs-display: clamp(34px, 4vw, 48px);   /* Hero H1 */
+  --af-fs-h1:      clamp(36px, 5vw, 44px);   /* Page-level H1 */
+  --af-fs-h2:      clamp(22px, 2vw, 24px);   /* Section heading (editorial) */
+  --af-fs-h3:      28px;                     /* Sub-section (Manrope) */
+  --af-fs-h4:      clamp(20px, 1.5vw, 22px); /* Lead / sub-headline */
+  --af-fs-lead:    18px;                     /* Lead paragraph above body */
+  --af-fs-body-l:  clamp(16px, 1.5vw, 17px);   /* Desktop body 17 / mobile 16 */
+  --af-fs-body:    16px;                     /* Default body */
+  --af-fs-small:   15px;                     /* Helper, captions */
+  --af-fs-micro:   14px;                     /* Footnotes, legal */
+
+  /* ---- Type rhythm ---- */
+  --af-lh-body:    1.65;
+  --af-lh-lead:    1.5;
+  --af-lh-display: 1.15;
+  --af-lh-heading: 1.25;
+  --af-ls-display: -0.01em;
+
+  /* ---- Layout ---- */
+  --af-section-py:    clamp(56px, 8vw, 120px);
+  --af-section-py-hero: clamp(32px, 6vw, 72px);
+  --af-section-py-compact: clamp(40px, 5vw, 64px);
+  --af-container:     1320px;
+  --af-container-narrow: 960px;
+  --af-container-prose: 720px;
+  --af-page-px:       clamp(16px, 4vw, 48px);
+  --af-gap:           clamp(24px, 3vw, 40px);
+
+  /* ---- Motion ---- */
+  --af-transition: all .2s ease;
+}

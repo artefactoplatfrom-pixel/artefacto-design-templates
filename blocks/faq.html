@@ -3,11 +3,11 @@
 <style>
 
     .af-faq {
-        --af-primary: #de6518;
+        
         --af-bg: #ffffff;
         --af-card-bg: #f4efe9;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
+        
+        
         --af-radius: 12px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
@@ -23,12 +23,27 @@
         margin: 0 auto;
     }
 
+    .af-faq__head {
+        text-align: center;
+        margin-bottom: clamp(28px, 4vw, 44px);
+    }
+
+    .af-faq__eyebrow {
+        font-family: var(--af-font-heading);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(18px, 1.6vw, 21px);
+        color: var(--af-primary);
+        margin-bottom: 8px;
+    }
+
     .af-faq__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(24px, 3.5vw, 40px);
+        font-size: clamp(24px, 3.5vw, 38px);
         font-weight: 700;
         text-align: center;
-        margin-bottom: clamp(24px, 4vw, 48px);
+        letter-spacing: -0.01em;
+        margin: 0;
     }
 
     .af-faq__list {
@@ -38,15 +53,16 @@
     }
 
     .af-faq__item {
-        background: var(--af-card-bg);
+        background: var(--af-bg-white);
         border-radius: var(--af-radius);
         overflow: hidden;
+        box-shadow: var(--af-shadow-1);
     }
 
     .af-faq__item summary {
-        padding: clamp(16px, 2.5vw, 24px);
-        font-size: clamp(18px, 1.6vw, 20px);
-        font-weight: 700;
+        padding: clamp(18px, 2.5vw, 24px);
+        font-size: clamp(17px, 1.5vw, 19px);
+        font-weight: 600;
         cursor: pointer;
         list-style: none;
         display: flex;
@@ -60,10 +76,11 @@
 
     .af-faq__item summary::after {
         content: '+';
-        font-size: 24px;
-        font-weight: 400;
+        font-size: 26px;
+        font-weight: 300;
         color: var(--af-primary);
         flex-shrink: 0;
+        line-height: 1;
         transition: transform 0.3s ease;
     }
 
@@ -76,17 +93,20 @@
     }
 
     .af-faq__answer {
-        padding: 0 clamp(16px, 2.5vw, 24px) clamp(16px, 2.5vw, 24px);
-        font-size: clamp(18px, 1.5vw, 20px);
-        line-height: 1.7;
+        padding: 0 clamp(18px, 2.5vw, 24px) clamp(18px, 2.5vw, 24px);
+        font-size: clamp(15px, 1.3vw, 16px);
+        line-height: 1.65;
         color: var(--af-text-light);
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 
 <div class="af-faq">
     <div class="af-faq__inner">
-        <h2 class="af-faq__heading">Frequently asked questions</h2>
+        <div class="af-faq__head">
+            <p class="af-faq__eyebrow">Good to know</p>
+            <h2 class="af-faq__heading">Frequently asked questions</h2>
+        </div>
         <div class="af-faq__list">
             <details class="af-faq__item">
                 <summary>Do I need any painting experience?</summary>

@@ -3,8 +3,8 @@
 <style>
 
     .af-sticky-cta {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-bg: #2c2c2c;
         --af-text: #ffffff;
         --af-text-light: rgba(255,255,255,0.8);
@@ -54,7 +54,7 @@
         display: inline-block;
         background: var(--af-primary); color: #fff;
         padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 32px);
-        border-radius: 80px; font-weight: 700;
+        border-radius: var(--af-radius-sm); font-weight: 700;
         font-size: clamp(16px, 1.3vw, 18px);
         text-decoration: none; border: none; cursor: pointer;
         transition: background 0.3s, transform 0.2s;
@@ -77,7 +77,7 @@
     }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }

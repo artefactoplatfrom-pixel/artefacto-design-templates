@@ -14,8 +14,8 @@
             --app-border: #2a2a4a;
             --app-text: #e0e0e0;
             --app-text-muted: #8888aa;
-            --app-accent: #de6518;
-            --app-accent-hover: #f47a2e;
+            --app-accent: #ed701e;
+            --app-accent-hover: #f7aa47;
             --app-success: #4caf50;
             --app-radius: 12px;
         }
@@ -917,12 +917,25 @@
         }
 
         // ===== SHARED HELPERS =====
+        // Canonical Artefacto tokens, fetched once and injected into every preview
+        // iframe so the showcase reflects the LP-level :root (single source of truth).
+        // NOT added to blockCache — copied block code stays bare; tokens come from
+        // the lp-generator :root at assembly.
+        let AF_TOKENS_CSS = '';
+        async function loadTokens() {
+            if (AF_TOKENS_CSS) return;
+            try { AF_TOKENS_CSS = await (await fetch('css/af-tokens.css')).text(); } catch {}
+        }
+        function withTokens(html) {
+            return AF_TOKENS_CSS ? `<style id="af-tokens">${AF_TOKENS_CSS}</style>` + html : html;
+        }
+
         function refreshIframe(blockId) {
             const card = document.querySelector(`[data-block-id="${blockId}"]`);
             if (card) {
                 const iframe = card.querySelector('iframe');
                 if (iframe) {
-                    iframe.srcdoc = blockCache[blockId];
+                    iframe.srcdoc = withTokens(blockCache[blockId]);
                     iframe.onload = () => autoResizeIframe(iframe);
                 }
             }
@@ -1095,7 +1108,7 @@ summary{min-height:48px!important;font-size:clamp(18px,1.8vw,20px)!important}
             if (card) {
                 const iframe = card.querySelector('iframe');
                 if (iframe) {
-                    iframe.srcdoc = blockCache[currentEditBlockId];
+                    iframe.srcdoc = withTokens(blockCache[currentEditBlockId]);
                     iframe.onload = () => autoResizeIframe(iframe);
                 }
             }
@@ -1487,7 +1500,7 @@ ${itemsHtml}
                     </div>
                     ${hasContent ? `
                         <div class="block-card__preview">
-                            <iframe srcdoc="${escapeAttr(html)}" onload="autoResizeIframe(this)" style="width: 100%;"></iframe>
+                            <iframe srcdoc="${escapeAttr(withTokens(html))}" onload="autoResizeIframe(this)" style="width: 100%;"></iframe>
                         </div>
                     ` : `
                         <div class="block-card__preview" style="padding: 48px; text-align: center; color: #999; font-style: italic;">
@@ -1604,8 +1617,8 @@ ${itemsHtml}
             }
         });
 
-        // Init
-        renderBlocks();
+        // Init — load canonical tokens first so previews render with the single source
+        (async () => { await loadTokens(); renderBlocks(); })();
     </script>
 </body>
 </html>

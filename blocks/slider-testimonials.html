@@ -3,13 +3,8 @@
 <style>
 
     .af-slider {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
         --af-bg: #f4efe9;
         --af-card-bg: #ffffff;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
@@ -28,15 +23,16 @@
 
     .af-slider__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(24px, 3.5vw, 40px);
+        font-size: clamp(24px, 3.5vw, 38px);
         font-weight: 700;
+        letter-spacing: -0.01em;
         margin-bottom: clamp(24px, 4vw, 48px);
     }
 
     .af-slider__track {
         position: relative;
         overflow: hidden;
-        border-radius: var(--af-radius);
+        border-radius: var(--af-radius-lg);
     }
 
     .af-slider__slides {
@@ -47,30 +43,32 @@
     .af-slider__slide {
         min-width: 100%;
         background: var(--af-card-bg);
-        border-radius: var(--af-radius);
+        border-radius: var(--af-radius-lg);
         padding: clamp(28px, 4vw, 48px);
         box-sizing: border-box;
+        box-shadow: var(--af-shadow-card);
     }
 
     .af-slider__quote {
         font-family: var(--af-font-heading);
         font-size: clamp(18px, 2vw, 22px);
         font-style: italic;
-        line-height: 1.7;
+        line-height: 1.6;
         color: var(--af-text);
-        margin-bottom: clamp(16px, 3vw, 24px);
+        margin-bottom: clamp(18px, 3vw, 26px);
         position: relative;
     }
 
     .af-slider__quote::before {
         content: '\201C';
-        font-size: 48px;
-        color: var(--af-primary);
+        font-family: var(--af-font-heading);
+        font-size: 64px;
+        color: var(--af-orange-light);
         position: absolute;
-        top: -16px;
-        left: -4px;
+        top: -20px;
+        left: -8px;
         line-height: 1;
-        opacity: 0.3;
+        z-index: 0;
     }
 
     .af-slider__author {
@@ -88,20 +86,25 @@
     }
 
     .af-slider__name {
-        font-weight: 700;
-        font-size: clamp(18px, 1.4vw, 20px);
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--af-text);
+        white-space: nowrap;
     }
 
+    .af-slider__author > div { text-align: left; }
+
     .af-slider__role {
-        font-size: clamp(16px, 1.2vw, 18px);
-        color: var(--af-text-light);
+        font-size: 13px;
+        color: var(--af-text-muted);
+        margin-top: 2px;
     }
 
     .af-slider__stars {
-        color: var(--af-primary);
-        font-size: 16px;
-        letter-spacing: 2px;
-        margin-bottom: 12px;
+        color: var(--af-orange-bright);
+        font-size: 15px;
+        letter-spacing: 3px;
+        margin-bottom: 14px;
     }
 
     .af-slider__controls {
@@ -116,22 +119,22 @@
         width: 44px;
         height: 44px;
         border-radius: 50%;
-        border: 2px solid var(--af-primary);
-        background: transparent;
-        color: var(--af-primary);
+        border: none;
+        background: var(--af-bg-white);
+        color: var(--af-text);
         font-size: 19px;
         cursor: pointer;
         transition: all 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: var(--af-shadow-card);
     }
 
     .af-slider__arrow:hover {
-        background: var(--af-primary);
+        background: var(--af-orange-bright);
         color: #fff;
-        transform: scale(1.08);
-        box-shadow: 0 4px 16px rgba(222, 101, 24, 0.3);
+        box-shadow: var(--af-shadow-cta);
     }
 
     .af-slider__dots {
@@ -140,10 +143,10 @@
     }
 
     .af-slider__dot {
-        width: 10px;
-        height: 10px;
+        width: 9px;
+        height: 9px;
         border-radius: 50%;
-        background: #d5cfc7;
+        background: var(--af-divider-strong);
         border: none;
         cursor: pointer;
         transition: all 0.3s;
@@ -151,19 +154,19 @@
     }
 
     .af-slider__dot.active {
-        background: var(--af-primary);
-        transform: scale(1.2);
+        background: var(--af-orange-bright);
+        transform: scale(1.25);
     }
 
     .af-slider__dot:hover {
-        background: var(--af-primary);
+        background: var(--af-orange-bright);
     }
 
     @media (max-width: 768px) {
         .af-slider__slide { padding: clamp(20px, 4vw, 28px); }
         .af-slider__quote::before { display: none; }
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 
 <div class="af-slider">
@@ -242,8 +245,17 @@
 
     function resetAuto() {
         clearInterval(autoTimer);
-        autoTimer = setInterval(() => goTo(current + 1), 5000);
+        autoTimer = setInterval(() => goTo(current + 1), 6000);
     }
     resetAuto();
+
+    // pause autoplay on hover / focus — gentler than constant motion
+    const root = slides.closest('.af-slider');
+    if (root) {
+        root.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        root.addEventListener('mouseleave', resetAuto);
+        root.addEventListener('focusin', () => clearInterval(autoTimer));
+        root.addEventListener('focusout', resetAuto);
+    }
 })();
 </script>

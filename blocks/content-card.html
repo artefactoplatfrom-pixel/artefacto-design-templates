@@ -3,11 +3,11 @@
 <style>
 
     .af-contentcard {
-        --af-primary: #de6518;
+        
         --af-bg: #f4efe9;
         --af-card-bg: #ffffff;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
+        
+        
         --af-radius: 20px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
@@ -18,34 +18,44 @@
     }
     .af-contentcard__inner { max-width: 720px; margin: 0 auto; }
     .af-contentcard__card {
+        position: relative;
         background: var(--af-card-bg);
         border-radius: var(--af-radius);
-        padding: clamp(24px, 4vw, 40px);
+        padding: clamp(28px, 4vw, 44px);
+        border-left: 4px solid var(--af-orange);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        box-shadow: var(--af-shadow-card);
     }
     .af-contentcard__card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        box-shadow: var(--af-shadow-card-hover);
     }
     .af-contentcard__tag {
-        display: inline-block;
-        font-size: clamp(16px, 1.2vw, 18px);
-        font-weight: 600;
-        color: var(--af-text-light);
-        margin-bottom: clamp(8px, 1.5vw, 16px);
+        display: inline-flex;
+        align-items: center;
+        font-family: var(--af-font-body);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--af-orange-bright);
+        background: var(--af-orange-light);
+        padding: 6px 14px;
+        border-radius: var(--af-radius-pill);
+        margin-bottom: clamp(14px, 2vw, 18px);
     }
     .af-contentcard__text {
         font-family: var(--af-font-heading);
-        font-size: clamp(18px, 2.2vw, 22px);
+        font-size: clamp(18px, 2.2vw, 21px);
         font-weight: 400;
-        line-height: 1.6;
+        line-height: 1.55;
+        color: var(--af-text);
     }
     .af-contentcard__text p { margin-bottom: clamp(12px, 2vw, 20px); }
     .af-contentcard__text p:last-child { margin-bottom: 0; }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }

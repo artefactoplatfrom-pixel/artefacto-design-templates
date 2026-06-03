@@ -1,0 +1,120 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Trust Faculty — две бегущие ленты карточек преподавателей навстречу (доверие/регалии).
+     Чистый CSS, без JS. На каждой ленте карточки ДУБЛИРУЮТСЯ (вторая половина aria-hidden) — это нужно для бесшовного цикла.
+     Пауза при наведении. При prefers-reduced-motion анимация выключается и ленту можно листать вручную. -->
+<style>
+
+    .af-trust {
+        
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        
+        
+        --af-muted: #8a857e;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) 0;
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        overflow: hidden;
+    }
+
+    .af-trust__head { max-width: 720px; margin: 0 auto clamp(32px, 5vw, 56px); padding: 0 clamp(16px, 4vw, 48px); text-align: center; }
+    .af-trust__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin: 0 0 12px; }
+    .af-trust__sub { font-size: clamp(16px, 1.6vw, 19px); line-height: 1.6; color: var(--af-text-light); margin: 0; }
+
+    .af-trust__rails {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(12px, 1.4vw, 18px);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+                mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    }
+
+    .af-trust__rail { overflow: hidden; }
+
+    .af-trust__track {
+        display: flex;
+        gap: clamp(10px, 1.2vw, 16px);
+        width: max-content;
+        will-change: transform;
+        animation: af-trust-scroll 60s linear infinite;
+    }
+    .af-trust__track--rev { animation-name: af-trust-scroll-rev; animation-duration: 75s; }
+    .af-trust__rail:hover .af-trust__track { animation-play-state: paused; }
+
+    .af-trust__card {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--af-card-bg);
+        border-radius: 50px;
+        padding: 8px 22px 8px 8px;
+        box-shadow: 0 4px 14px rgba(43, 43, 43, 0.06);
+    }
+    .af-trust__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block; background: #e7e0d8; flex-shrink: 0; }
+    .af-trust__name { font-weight: 600; font-size: 15px; color: var(--af-text); line-height: 1.2; }
+    .af-trust__cred { font-size: 12px; color: var(--af-muted); line-height: 1.3; margin-top: 2px; white-space: nowrap; }
+
+    .af-trust__foot { text-align: center; margin: clamp(28px, 4vw, 44px) auto 0; padding: 0 clamp(16px, 4vw, 48px); font-size: 14px; color: var(--af-muted); }
+    .af-trust__foot strong { color: var(--af-primary); font-weight: 700; }
+
+    @keyframes af-trust-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes af-trust-scroll-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+        .af-trust__track { animation: none; }
+        .af-trust__rail { overflow-x: auto; scrollbar-width: none; }
+        .af-trust__rail::-webkit-scrollbar { display: none; }
+    }
+
+    :focus-visible { outline: 3px solid var(--af-primary); outline-offset: 3px; border-radius: 4px; }
+</style>
+
+<div class="af-trust">
+    <div class="af-trust__head">
+        <h2 class="af-trust__heading">Taught by 105+ artists from around the world</h2>
+        <p class="af-trust__sub">AWS, NWS, RWS signature · IWS officers · brand ambassadors for Daniel Smith, Winsor &amp; Newton, Escoda — from 20+ countries.</p>
+    </div>
+
+    <div class="af-trust__rails">
+        <!-- Rail 1 — forward. Duplicate the card set (2nd half aria-hidden) for a seamless loop. -->
+        <div class="af-trust__rail">
+            <div class="af-trust__track">
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=112&h=112&fit=crop" alt="Andy Evansen"><div><div class="af-trust__name">Andy Evansen</div><div class="af-trust__cred">AWS · PAPA · TWSA</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=112&h=112&fit=crop" alt="Keiko Tanabe"><div><div class="af-trust__name">Keiko Tanabe</div><div class="af-trust__cred">NWS · AWS · AIS</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&h=112&fit=crop" alt="Amit Kapoor"><div><div class="af-trust__name">Amit Kapoor</div><div class="af-trust__cred">IWS Global VP</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&h=112&fit=crop" alt="Janine Gallizia"><div><div class="af-trust__name">Janine Gallizia</div><div class="af-trust__cred">Art of Watercolour</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=112&h=112&fit=crop" alt="David Poxon"><div><div class="af-trust__name">David Poxon</div><div class="af-trust__cred">RWS · NWS America</div></div></div>
+                <!-- duplicate -->
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Andy Evansen</div><div class="af-trust__cred">AWS · PAPA · TWSA</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Keiko Tanabe</div><div class="af-trust__cred">NWS · AWS · AIS</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Amit Kapoor</div><div class="af-trust__cred">IWS Global VP</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Janine Gallizia</div><div class="af-trust__cred">Art of Watercolour</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">David Poxon</div><div class="af-trust__cred">RWS · NWS America</div></div></div>
+            </div>
+        </div>
+
+        <!-- Rail 2 — reverse, slower. -->
+        <div class="af-trust__rail">
+            <div class="af-trust__track af-trust__track--rev">
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=112&h=112&fit=crop" alt="Patricia Guzmán"><div><div class="af-trust__name">Patricia Guzmán</div><div class="af-trust__cred">30+ awards · MSW</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=112&h=112&fit=crop" alt="Pasqualino Fracasso"><div><div class="af-trust__name">Pasqualino Fracasso</div><div class="af-trust__cred">AWS · AIA · NWS</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=112&h=112&fit=crop" alt="Ze Ze Lai"><div><div class="af-trust__name">Ze Ze Lai</div><div class="af-trust__cred">IWS Global VP</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=112&h=112&fit=crop" alt="Joe Dowden"><div><div class="af-trust__name">Joe Dowden</div><div class="af-trust__cred">RWS · SAA</div></div></div>
+                <div class="af-trust__card"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=112&h=112&fit=crop" alt="Hazel Soan"><div><div class="af-trust__name">Hazel Soan</div><div class="af-trust__cred">UK · 30+ years</div></div></div>
+                <!-- duplicate -->
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Patricia Guzmán</div><div class="af-trust__cred">30+ awards · MSW</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Pasqualino Fracasso</div><div class="af-trust__cred">AWS · AIA · NWS</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Ze Ze Lai</div><div class="af-trust__cred">IWS Global VP</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Joe Dowden</div><div class="af-trust__cred">RWS · SAA</div></div></div>
+                <div class="af-trust__card" aria-hidden="true"><img class="af-trust__avatar" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=112&h=112&fit=crop" alt=""><div><div class="af-trust__name">Hazel Soan</div><div class="af-trust__cred">UK · 30+ years</div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <p class="af-trust__foot"><strong>20 of 105+</strong> · Brand ambassadors for Daniel Smith, Winsor &amp; Newton, Escoda.</p>
+</div>

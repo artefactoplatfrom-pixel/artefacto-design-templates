@@ -1,14 +1,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
-<!-- Artefacto Block: Hero Split — текст слева, картинка справа -->
+<!-- Artefacto Block: Hero Split — текст слева, фото справа (десктоп); на мобильном фото уходит под кнопки.
+     Медиа-зона .af-hero-split__image держит 1–4 <img>, раскладка подстраивается под количество:
+       1 фото  → во всю колонку (4/3)
+       2 фото  → две равные плитки
+       3 фото  → первое высокое + два стопкой
+       4 фото  → сетка 2×2
+     Первый <img> остаётся редактируемым через manifest (img_src/img_alt). -->
 <style>
 
     .af-hero-split {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-bg: #f4efe9;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
+        
+        
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
@@ -24,7 +29,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: clamp(24px, 4vw, 56px);
-        align-items: start;
+        align-items: center;
     }
 
     .af-hero-split__content {
@@ -88,23 +93,42 @@
         gap: 12px;
         flex-wrap: wrap;
         margin-top: 8px;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .af-hero-split__btn { border: 2px solid transparent; }
 
+    /* ---- media zone: 1–4 photos, count-adaptive mosaic ---- */
     .af-hero-split__image {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 1fr;
+        gap: clamp(6px, 0.8vw, 10px);
         border-radius: var(--af-radius);
         overflow: hidden;
     }
 
     .af-hero-split__image img {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
         aspect-ratio: 4/3;
         object-fit: cover;
-        border-radius: var(--af-radius);
+        display: block;
+    }
+
+    /* 1 photo → fills the whole column */
+    .af-hero-split__image img:only-child {
+        grid-column: 1 / -1;
+        aspect-ratio: 4/3;
+    }
+
+    /* 3 photos → first one spans both rows */
+    .af-hero-split__image img:first-child:nth-last-child(3) {
+        grid-row: span 2;
+        aspect-ratio: auto;
+    }
+    .af-hero-split__image img:first-child:nth-last-child(3) ~ img {
+        aspect-ratio: 16/10;
     }
 
     @media (max-width: 768px) {
@@ -114,17 +138,19 @@
         }
         .af-hero-split__inner {
             grid-template-columns: 1fr;
-            gap: 16px;
+            gap: 24px;
         }
         .af-hero-split__content {
             align-items: center;
         }
-        .af-hero-split__image {
-            order: -1;
+        .af-hero-split__buttons {
+            justify-content: center;
         }
-        .af-hero-split__image img {
-            aspect-ratio: 16/9;
-            max-height: 200px;
+        /* photo sits AFTER the content in the DOM → on mobile it lands under the buttons */
+        .af-hero-split__image {
+            max-width: 520px;
+            width: 100%;
+            margin: 0 auto;
         }
         .af-hero-split__heading {
             font-size: 24px;
@@ -133,7 +159,7 @@
             font-size: 16px;
         }
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 
 <div class="af-hero-split">
@@ -154,6 +180,7 @@
                 <a href="#form" class="af-hero-split__btn af-hero-split__btn--primary af-cta-btn">Take part in the intensive</a>
             </div>
         </div>
+        <!-- Media zone — put 1 to 4 <img> here; the layout adapts to the count. -->
         <div class="af-hero-split__image">
             <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=600&fit=crop" alt="Painting artwork">
         </div>

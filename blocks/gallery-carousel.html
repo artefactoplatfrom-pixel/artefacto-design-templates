@@ -1,0 +1,190 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Gallery Carousel — коверфлоу-карусель работ (центр крупный, соседи уменьшены, точки + стрелки).
+     Картинки НЕ обрезаются: высота слайда фиксирована, ширина — по пропорции изображения, поэтому карточки бывают разной ширины.
+     Кладите 4–8 слайдов. Скрипт в конце скоупится на каждый .af-gallery-carousel отдельно (можно несколько на странице). -->
+<style>
+
+    .af-gallery-carousel {
+        
+        
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        
+        
+        --af-muted: #8a857e;
+        --af-radius: 20px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-gallery-carousel__inner { max-width: 1000px; margin: 0 auto; }
+
+    .af-gallery-carousel__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.2;
+        margin: 0 0 12px;
+    }
+
+    .af-gallery-carousel__sub {
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.6;
+        color: var(--af-text-light);
+        text-align: center;
+        max-width: 620px;
+        margin: 0 auto clamp(32px, 5vw, 56px);
+    }
+
+    .af-gallery-carousel__viewport {
+        position: relative;
+        height: clamp(240px, 34vw, 400px);
+        perspective: 1400px;
+    }
+
+    .af-gallery-carousel__slide {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(43, 43, 43, 0.12);
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0.6);
+        transition: transform .55s cubic-bezier(.4,0,.2,1), opacity .55s ease, box-shadow .55s ease;
+    }
+
+    .af-gallery-carousel__slide img {
+        height: 100%;
+        width: auto;
+        max-width: none;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+
+    /* coverflow positions — set by the script via these state classes */
+    .af-gallery-carousel__slide.is-active   { opacity: 1;   z-index: 5; pointer-events: auto; transform: translate(-50%, -50%) scale(1); box-shadow: 0 18px 48px rgba(43,43,43,0.22); }
+    .af-gallery-carousel__slide.is-next     { opacity: .6;  z-index: 4; transform: translate(calc(-50% + 64%), -50%) scale(.82); }
+    .af-gallery-carousel__slide.is-prev     { opacity: .6;  z-index: 4; transform: translate(calc(-50% - 64%), -50%) scale(.82); }
+    .af-gallery-carousel__slide.is-far-next { opacity: .28; z-index: 3; transform: translate(calc(-50% + 112%), -50%) scale(.66); }
+    .af-gallery-carousel__slide.is-far-prev { opacity: .28; z-index: 3; transform: translate(calc(-50% - 112%), -50%) scale(.66); }
+
+    .af-gallery-carousel__nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin-top: clamp(20px, 3vw, 32px);
+    }
+
+    .af-gallery-carousel__btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: none;
+        background: var(--af-card-bg);
+        color: var(--af-text);
+        box-shadow: 0 6px 20px rgba(43,43,43,0.12);
+        cursor: pointer;
+        font-size: 24px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    .af-gallery-carousel__btn:hover { background: var(--af-primary); color: #fff; transform: translateY(-1px); }
+
+    .af-gallery-carousel__dots { display: flex; align-items: center; gap: 9px; }
+    .af-gallery-carousel__dot {
+        width: 9px; height: 9px; padding: 0; border: none; border-radius: 50%;
+        background: rgba(43,43,43,0.2); cursor: pointer; transition: all 0.3s ease;
+    }
+    .af-gallery-carousel__dot.active { background: var(--af-primary); transform: scale(1.25); }
+
+    @media (max-width: 520px) {
+        .af-gallery-carousel__slide.is-far-next, .af-gallery-carousel__slide.is-far-prev { opacity: 0; }
+        .af-gallery-carousel__slide.is-next { transform: translate(calc(-50% + 52%), -50%) scale(.8); }
+        .af-gallery-carousel__slide.is-prev { transform: translate(calc(-50% - 52%), -50%) scale(.8); }
+    }
+
+    :focus-visible { outline: 3px solid var(--af-primary); outline-offset: 3px; border-radius: 4px; }
+</style>
+
+<div class="af-gallery-carousel">
+    <div class="af-gallery-carousel__inner">
+        <h2 class="af-gallery-carousel__heading">Paintings from our students</h2>
+        <p class="af-gallery-carousel__sub">Real work from painters who took the course — and the skies they brought to life.</p>
+
+        <div class="af-gallery-carousel__widget" data-af-carousel>
+            <div class="af-gallery-carousel__viewport">
+                <!-- 4–8 slides. Width auto = no cropping. -->
+                <div class="af-gallery-carousel__slide"><img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=900&fit=max" alt="Student artwork 1" loading="lazy"></div>
+                <div class="af-gallery-carousel__slide"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=900&fit=max" alt="Student artwork 2" loading="lazy"></div>
+                <div class="af-gallery-carousel__slide"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=900&fit=max" alt="Student artwork 3" loading="lazy"></div>
+                <div class="af-gallery-carousel__slide"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&fit=max" alt="Student artwork 4" loading="lazy"></div>
+                <div class="af-gallery-carousel__slide"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=900&fit=max" alt="Student artwork 5" loading="lazy"></div>
+                <div class="af-gallery-carousel__slide"><img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=900&fit=max" alt="Student artwork 6" loading="lazy"></div>
+            </div>
+            <div class="af-gallery-carousel__nav">
+                <button class="af-gallery-carousel__btn" data-af-prev aria-label="Previous">&lsaquo;</button>
+                <div class="af-gallery-carousel__dots" data-af-dots></div>
+                <button class="af-gallery-carousel__btn" data-af-next aria-label="Next">&rsaquo;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    function initCarousel(widget) {
+        if (widget.dataset.afReady) return;
+        widget.dataset.afReady = '1';
+        var slides = [].slice.call(widget.querySelectorAll('.af-gallery-carousel__slide'));
+        var dotsWrap = widget.querySelector('[data-af-dots]');
+        var n = slides.length, cur = 0;
+        if (!n) return;
+
+        // build dots
+        var dots = slides.map(function (s, i) {
+            var b = document.createElement('button');
+            b.className = 'af-gallery-carousel__dot' + (i === 0 ? ' active' : '');
+            b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            b.addEventListener('click', function () { go(i); });
+            dotsWrap.appendChild(b);
+            return b;
+        });
+
+        function render() {
+            slides.forEach(function (s, i) {
+                s.classList.remove('is-active', 'is-next', 'is-prev', 'is-far-next', 'is-far-prev');
+                var rel = (i - cur + n) % n, cls = null;
+                if (rel === 0) cls = 'is-active';
+                else if (rel === 1) cls = 'is-next';
+                else if (rel === 2) cls = 'is-far-next';
+                else if (rel === n - 1) cls = 'is-prev';
+                else if (rel === n - 2) cls = 'is-far-prev';
+                if (cls) s.classList.add(cls);
+            });
+            dots.forEach(function (d, i) { d.classList.toggle('active', i === cur); });
+        }
+        function go(i) { cur = (i % n + n) % n; render(); }
+
+        widget.querySelector('[data-af-prev]').addEventListener('click', function () { go(cur - 1); });
+        widget.querySelector('[data-af-next]').addEventListener('click', function () { go(cur + 1); });
+        slides.forEach(function (s, i) { s.addEventListener('click', function () { if (i !== cur) go(i); }); });
+        render();
+    }
+    document.querySelectorAll('[data-af-carousel]').forEach(initCarousel);
+})();
+</script>

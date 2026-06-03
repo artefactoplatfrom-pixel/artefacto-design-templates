@@ -3,8 +3,7 @@
 <style>
 
     .af-timelineh {
-        --af-primary: #de6518; --af-bg: #f4efe9;
-        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+         --af-bg: #f4efe9;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
@@ -26,7 +25,7 @@
     @media (max-width: 480px) { .af-timelineh__steps { grid-template-columns: 1fr; } }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }

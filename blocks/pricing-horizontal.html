@@ -3,8 +3,7 @@
 <style>
 
     .af-pricingh {
-        --af-primary: #de6518; --af-bg: #ffffff; --af-card-bg: #f4efe9;
-        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+         --af-bg: #ffffff; --af-card-bg: #f4efe9;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
@@ -25,19 +24,19 @@
     .af-pricingh__price { font-family: var(--af-font-heading); font-size: clamp(24px, 2.5vw, 32px); font-weight: 700; white-space: nowrap; }
     .af-pricingh__btn {
     min-height: 48px;
-        padding: clamp(10px, 1.5vw, 12px) clamp(20px, 2.5vw, 28px); border-radius: 50px;
+        padding: clamp(10px, 1.5vw, 12px) clamp(20px, 2.5vw, 28px); border-radius: var(--af-radius-sm);
         font-family: var(--af-font-body); font-size: clamp(16px, 1.2vw, 18px); font-weight: 700;
         text-decoration: none; border: 2px solid var(--af-primary); cursor: pointer; transition: all 0.3s; white-space: nowrap;
     }
     .af-pricingh__btn--primary { background: var(--af-primary); color: #fff; }
-    .af-pricingh__btn--primary:hover { background: #c55a15; }
+    .af-pricingh__btn--primary:hover { background: var(--af-primary-hover); }
     .af-pricingh__btn--outline { background: transparent; color: var(--af-primary); }
     .af-pricingh__btn--outline:hover { background: var(--af-primary); color: #fff; }
     @media (max-width: 640px) {
         .af-pricingh__card { grid-template-columns: 1fr; text-align: center; }
         .af-pricingh__btn { justify-self: center; }
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 <div class="af-pricingh">
     <div class="af-pricingh__inner">

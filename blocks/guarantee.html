@@ -1,15 +1,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
-<!-- Artefacto Block: Guarantee — гарантия и знаки доверия -->
+<!-- Artefacto Block: Guarantee — гарантия и знаки доверия. Кольцевой бейдж (без градиента), line-иконки (без эмодзи), тёплая тень. -->
 <style>
 
     .af-guarantee {
-        --af-primary: #de6518;
         --af-bg: #f4efe9;
         --af-card-bg: #ffffff;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-border: #999999;
-        --af-radius: 16px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg);
@@ -20,62 +15,60 @@
     .af-guarantee__inner { max-width: 960px; margin: 0 auto; }
     .af-guarantee__card {
         background: var(--af-card-bg);
-        border-radius: var(--af-radius);
-        padding: clamp(32px, 5vw, 56px);
+        border-radius: var(--af-radius-lg);
+        padding: clamp(32px, 5vw, 52px);
         display: flex; align-items: center;
-        gap: clamp(24px, 4vw, 48px);
-        box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        gap: clamp(28px, 4vw, 44px);
+        box-shadow: var(--af-shadow-card);
     }
     .af-guarantee__badge {
         flex-shrink: 0;
-        width: clamp(112px, 14vw, 140px);
-        height: clamp(112px, 14vw, 140px);
-        background: linear-gradient(135deg, var(--af-primary), #f4a261);
+        width: clamp(112px, 14vw, 128px);
+        height: clamp(112px, 14vw, 128px);
+        background: var(--af-orange-light);
+        border: 2px solid var(--af-orange);
         border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        box-shadow: 0 4px 20px rgba(222,101,24,0.25);
-        padding: 10px;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
         box-sizing: border-box;
     }
-    .af-guarantee__badge-text {
-        color: #fff; text-align: center; line-height: 1.15;
-        font-weight: 800; font-size: clamp(11px, 1.1vw, 14px);
-        text-transform: uppercase; letter-spacing: 0.02em;
-    }
-    .af-guarantee__badge-text span {
-        display: block;
+    .af-guarantee__badge-num {
         font-family: var(--af-font-heading);
-        font-size: clamp(24px, 2.6vw, 32px);
+        font-size: clamp(32px, 3.6vw, 40px);
         font-weight: 700;
-        line-height: 1;
-        margin-bottom: 2px;
+        line-height: 0.9;
+        color: #8a4a12;
+    }
+    .af-guarantee__badge-text {
+        color: #8a4a12; text-align: center;
+        font-weight: 700; font-size: 11px;
+        text-transform: uppercase; letter-spacing: 0.08em;
+        margin-top: 4px;
     }
     .af-guarantee__content { flex: 1; }
     .af-guarantee__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(21px, 2.8vw, 29px);
-        font-weight: 700; margin-bottom: clamp(24px, 4vw, 48px);
+        font-size: clamp(21px, 2.8vw, 28px);
+        font-weight: 700; margin-bottom: clamp(14px, 2vw, 18px);
     }
     .af-guarantee__text {
-        font-size: clamp(18px, 1.4vw, 20px);
-        color: var(--af-text-light); line-height: 1.7;
-        margin-bottom: 20px;
+        font-size: clamp(16px, 1.4vw, 18px);
+        color: var(--af-text-light); line-height: 1.65;
+        margin-bottom: clamp(20px, 3vw, 26px);
     }
     .af-guarantee__badges {
         display: flex; flex-wrap: wrap;
-        gap: clamp(12px, 2vw, 20px);
+        gap: clamp(12px, 2vw, 22px);
     }
     .af-guarantee__trust {
         display: flex; align-items: center;
-        gap: 8px; font-size: clamp(16px, 1.2vw, 18px);
+        gap: 9px; font-size: clamp(14px, 1.2vw, 15px);
         font-weight: 600; color: var(--af-text);
     }
-    .af-guarantee__trust-icon {
-        width: 28px; height: 28px;
-        background: rgba(222,101,24,0.1);
-        border-radius: 8px;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 14px;
+    .af-guarantee__trust svg {
+        width: 20px; height: 20px;
+        color: var(--af-orange-bright);
+        flex-shrink: 0;
     }
 
     @media (max-width: 768px) {
@@ -84,7 +77,7 @@
     }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }
@@ -94,29 +87,27 @@
     <div class="af-guarantee__inner">
         <div class="af-guarantee__card">
             <div class="af-guarantee__badge">
-                <div class="af-guarantee__badge-text">
-                    <span>30</span>
-                    day money<br>back
-                </div>
+                <div class="af-guarantee__badge-num">14</div>
+                <div class="af-guarantee__badge-text">day money-back</div>
             </div>
             <div class="af-guarantee__content">
-                <h2 class="af-guarantee__heading">100% Satisfaction Guarantee</h2>
-                <p class="af-guarantee__text">Try the course risk-free for 30 days. If it is not the right fit, we will refund your payment in full — no questions asked. We believe in the quality of our program and want you to feel confident in your decision.</p>
+                <h2 class="af-guarantee__heading">100% satisfaction guarantee</h2>
+                <p class="af-guarantee__text">Try the course risk-free for 14 days. If it is not the right fit, we refund your payment in full — no questions asked. We believe in the quality of our program and want you to feel confident in your decision.</p>
                 <div class="af-guarantee__badges">
                     <div class="af-guarantee__trust">
-                        <div class="af-guarantee__trust-icon">&#128274;</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
                         Secure payment
                     </div>
                     <div class="af-guarantee__trust">
-                        <div class="af-guarantee__trust-icon">&#9989;</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v5c0 4.2 2.9 7.7 7 9 4.1-1.3 7-4.8 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
                         Verified reviews
                     </div>
                     <div class="af-guarantee__trust">
-                        <div class="af-guarantee__trust-icon">&#127942;</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>
                         Award-winning
                     </div>
                     <div class="af-guarantee__trust">
-                        <div class="af-guarantee__trust-icon">&#128100;</div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6"/><path d="M17.5 14.5a5.5 5.5 0 0 1 3 5"/></svg>
                         5,000+ students
                     </div>
                 </div>
