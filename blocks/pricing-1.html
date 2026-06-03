@@ -2,12 +2,11 @@
 <!-- Artefacto Block: Pricing 1 Plan with Modal Registration -->
 <style>
     .af-pricing1 {
-        --af-primary: #de6518;
+        
         --af-bg: #ffffff;
         --af-card-bg: #f4efe9;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
+        
+        
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg);
@@ -76,7 +75,7 @@
         display: block;
         text-align: center;
         padding: clamp(14px, 2vw, 18px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         font-family: var(--af-font-body);
         font-size: clamp(18px, 1.4vw, 20px);
         font-weight: 700;
@@ -125,7 +124,7 @@
         border: none;
         background: transparent;
         font-size: 28px;
-        color: var(--af-text-light, #4a4a4a);
+        color: var(--af-text-light, var(--af-text-light));
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -161,28 +160,28 @@
         box-sizing: border-box;
         min-height: 48px;
     }
-    .af-pricing1__input:focus { border-color: var(--af-primary, #de6518); outline: none; }
+    .af-pricing1__input:focus { border-color: var(--af-primary); outline: none; }
     .af-pricing1__submit {
         min-height: 48px;
         display: block;
         width: 100%;
         text-align: center;
         padding: clamp(14px, 2vw, 18px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         font-family: var(--af-font-body, 'Manrope', sans-serif);
         font-size: clamp(18px, 1.4vw, 20px);
         font-weight: 700;
         cursor: pointer;
         transition: all 0.3s ease;
-        background: var(--af-primary, #de6518);
+        background: var(--af-primary);
         color: #fff;
-        border: 2px solid var(--af-primary, #de6518);
+        border: 2px solid var(--af-primary);
         margin-top: 8px;
     }
-    .af-pricing1__submit:hover { background: var(--af-primary, #de6518); border-color: var(--af-primary, #de6518); filter: brightness(0.85); transform: translateY(-2px); }
+    .af-pricing1__submit:hover { background: var(--af-primary); border-color: var(--af-primary); filter: brightness(0.85); transform: translateY(-2px); }
     .af-pricing1__note {
         font-size: 14px;
-        color: var(--af-text-light, #4a4a4a);
+        color: var(--af-text-light, var(--af-text-light));
         text-align: center;
         line-height: 1.5;
     }

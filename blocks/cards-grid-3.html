@@ -3,25 +3,25 @@
 <style>
 
     .af-cards3 {
-        --af-primary: #de6518; --af-bg: #ffffff; --af-card-bg: #f4efe9;
-        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+         --af-bg: #ffffff; --af-card-bg: #f4efe9;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
         font-family: var(--af-font-body); color: var(--af-text);
     }
     .af-cards3__inner { max-width: 1200px; margin: 0 auto; }
-    .af-cards3__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(32px, 5vw, 48px); }
+    .af-cards3__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 38px); font-weight: 700; text-align: center; letter-spacing: -0.01em; margin-bottom: clamp(32px, 5vw, 48px); }
     .af-cards3__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); }
-    .af-cards3__card { background: var(--af-card-bg); border-radius: var(--af-radius); padding: clamp(24px, 3vw, 36px); text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-    .af-cards3__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-    .af-cards3__icon { font-size: clamp(32px, 3vw, 40px); margin-bottom: 12px; }
+    .af-cards3__card { background: var(--af-card-bg); border-radius: var(--af-radius-lg); padding: clamp(28px, 3vw, 38px); text-align: center; box-shadow: var(--af-shadow-card); transition: transform 0.3s, box-shadow 0.3s; }
+    .af-cards3__card:hover { transform: translateY(-3px); box-shadow: var(--af-shadow-card-hover); }
+    .af-cards3__icon { width: 56px; height: 56px; border-radius: 50%; background: var(--af-orange-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+    .af-cards3__icon svg { width: 28px; height: 28px; color: #8a4a12; }
     .af-cards3__card-title { font-family: var(--af-font-heading); font-size: clamp(18px, 1.8vw, 21px); font-weight: 700; margin-bottom: 8px; }
-    .af-cards3__card-text { font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; color: var(--af-text-light); }
-    @media (max-width: 768px) { .af-cards3__grid { grid-template-columns: 1fr; } }
+    .af-cards3__card-text { font-size: clamp(15px, 1.4vw, 16px); line-height: 1.6; color: var(--af-text-light); }
+    @media (max-width: 768px) { .af-cards3__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }
@@ -30,9 +30,9 @@
     <div class="af-cards3__inner">
         <h2 class="af-cards3__heading">Why students love this course</h2>
         <div class="af-cards3__grid">
-            <div class="af-cards3__card"><div class="af-cards3__icon">🌊</div><h3 class="af-cards3__card-title">Unique Method</h3><p class="af-cards3__card-text">Start with what water wants to do, not with rigid technique drills.</p></div>
-            <div class="af-cards3__card"><div class="af-cards3__icon">👨‍🎨</div><h3 class="af-cards3__card-title">Master Teacher</h3><p class="af-cards3__card-text">Learn from Nicolás López with 20+ years of experience.</p></div>
-            <div class="af-cards3__card"><div class="af-cards3__icon">🏆</div><h3 class="af-cards3__card-title">Real Results</h3><p class="af-cards3__card-text">Students create impressive paintings from day one.</p></div>
+            <div class="af-cards3__card"><div class="af-cards3__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8c2-2 4 1 6 0s4-2 6 0 4 1 6 0"/><path d="M3 14c2-2 4 1 6 0s4-2 6 0 4 1 6 0"/><path d="M3 20c2-2 4 1 6 0s4-2 6 0 4 1 6 0"/></svg></div><h3 class="af-cards3__card-title">Unique Method</h3><p class="af-cards3__card-text">Start with what water wants to do, not with rigid technique drills.</p></div>
+            <div class="af-cards3__card"><div class="af-cards3__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/><path d="m18 4 2.5 1-1 2.5"/></svg></div><h3 class="af-cards3__card-title">Master Teacher</h3><p class="af-cards3__card-text">Learn from Nicolás López with 20+ years of experience.</p></div>
+            <div class="af-cards3__card"><div class="af-cards3__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></div><h3 class="af-cards3__card-title">Real Results</h3><p class="af-cards3__card-text">Students create impressive paintings from day one.</p></div>
         </div>
     </div>
 </div>

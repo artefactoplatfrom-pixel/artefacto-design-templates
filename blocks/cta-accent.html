@@ -2,8 +2,8 @@
 <!-- Artefacto Block: CTA Accent — кнопка на акцентном фоне -->
 <style>
     .af-cta-accent {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
@@ -40,7 +40,7 @@
         justify-content: center;
         min-height: 48px;
         padding: clamp(14px, 2vw, 18px) clamp(32px, 5vw, 48px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         background: #fff;
         color: var(--af-primary);
         font-family: var(--af-font-body);
@@ -54,7 +54,7 @@
     }
 
     .af-cta-accent__btn:hover {
-        background: #3b3b3b;
+        background: var(--af-text);
         color: #fff;
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);

@@ -3,8 +3,8 @@
 <style>
 
     .af-cta {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
@@ -16,63 +16,72 @@
     }
 
     .af-cta__inner {
-        max-width: 720px;
+        max-width: 660px;
         margin: 0 auto;
+    }
+
+    .af-cta__eyebrow {
+        font-family: var(--af-font-heading);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(18px, 1.6vw, 21px);
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 12px;
     }
 
     .af-cta__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(26px, 4vw, 45px);
+        font-size: clamp(30px, 4vw, 44px);
         font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: clamp(24px, 4vw, 48px);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        margin-bottom: clamp(16px, 2vw, 22px);
     }
 
     .af-cta__desc {
         font-size: clamp(18px, 1.6vw, 20px);
-        line-height: 1.7;
+        line-height: 1.6;
         opacity: 0.9;
-        margin-bottom: clamp(24px, 4vw, 36px);
+        margin-bottom: clamp(28px, 4vw, 40px);
     }
 
     .af-cta__btn {
     min-height: 48px;
         display: inline-flex;
-        padding: clamp(14px, 2vw, 18px) clamp(36px, 5vw, 56px);
-        border-radius: 50px;
+        align-items: center;
+        padding: clamp(14px, 2vw, 17px) clamp(32px, 4vw, 44px);
+        border-radius: var(--af-radius-sm);
         background: #fff;
         color: var(--af-primary);
         font-family: var(--af-font-body);
-        font-size: clamp(18px, 1.6vw, 20px);
+        font-size: clamp(17px, 1.5vw, 19px);
         font-weight: 700;
         text-decoration: none;
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
-    }
-
-    .af-cta__btn {
-        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.18);
     }
 
     .af-cta__btn:hover {
-        background: var(--af-primary-hover);
+        background: var(--af-bg-ink);
         color: #fff;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.25);
     }
 
     .af-cta__btn:active {
         transform: translateY(0);
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 
 <div class="af-cta">
     <div class="af-cta__inner">
+        <p class="af-cta__eyebrow">Limited spots available</p>
         <h2 class="af-cta__heading">Ready to transform your painting?</h2>
-        <p class="af-cta__desc">Join the intensive and discover a new way to see watercolor. Limited spots available.</p>
-        <a href="#form" class="af-cta__btn">Reserve your spot now</a>
+        <p class="af-cta__desc">Join the intensive and discover a new way to see watercolor.</p>
+        <a href="#form" class="af-cta__btn">Reserve your spot</a>
     </div>
 </div>

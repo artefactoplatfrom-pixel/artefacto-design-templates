@@ -3,10 +3,10 @@
 <style>
 
     .af-timeline {
-        --af-primary: #de6518;
+        
         --af-bg: #ffffff;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
+        
+        
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg);
@@ -15,28 +15,31 @@
         color: var(--af-text);
     }
     .af-timeline__inner { max-width: 720px; margin: 0 auto; }
+    .af-timeline__head { text-align: center; margin-bottom: clamp(28px, 4vw, 48px); }
+    .af-timeline__eyebrow { font-family: var(--af-font-heading); font-style: italic; font-weight: 400; font-size: clamp(18px, 1.6vw, 21px); color: var(--af-orange-bright); margin-bottom: 8px; }
     .af-timeline__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(24px, 3.5vw, 40px);
+        font-size: clamp(24px, 3.5vw, 38px);
         font-weight: 700;
         text-align: center;
-        margin-bottom: clamp(24px, 4vw, 48px);
+        letter-spacing: -0.01em;
+        margin: 0;
     }
     .af-timeline__list {
         display: flex;
         flex-direction: column;
         gap: 0;
         position: relative;
-        padding-left: clamp(36px, 6vw, 48px);
+        padding-left: clamp(56px, 8vw, 64px);
     }
     .af-timeline__list::before {
         content: '';
         position: absolute;
-        left: 18px;
-        top: 8px;
-        bottom: 8px;
+        left: 19px;
+        top: 12px;
+        bottom: 12px;
         width: 2px;
-        background: #e5ddd0;
+        background: var(--af-divider-strong);
     }
     .af-timeline__item {
         position: relative;
@@ -45,21 +48,27 @@
     .af-timeline__item:last-child { padding-bottom: 0; }
     .af-timeline__dot {
         position: absolute;
-        left: -34px;
-        top: 4px;
-        width: 12px;
-        height: 12px;
+        left: -64px;
+        top: -2px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        background: var(--af-primary);
-        border: 3px solid #fff;
-        box-shadow: 0 0 0 2px var(--af-primary);
+        background: var(--af-orange-light);
+        color: #8a4a12;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--af-font-heading);
+        font-weight: 700;
+        font-size: 17px;
+        border: 2px solid var(--af-bg-white);
+        box-shadow: 0 0 0 1px var(--af-divider-strong);
     }
     .af-timeline__step {
-        font-size: clamp(16px, 1.2vw, 18px);
-        font-weight: 700;
-        color: var(--af-primary);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+        font-family: var(--af-font-heading);
+        font-style: italic;
+        font-size: clamp(16px, 1.4vw, 17px);
+        color: var(--af-orange-bright);
         margin-bottom: 4px;
     }
     .af-timeline__title {
@@ -69,13 +78,13 @@
         margin-bottom: 8px;
     }
     .af-timeline__text {
-        font-size: clamp(16px, 1.4vw, 18px);
-        line-height: 1.7;
+        font-size: clamp(15px, 1.4vw, 16px);
+        line-height: 1.6;
         color: var(--af-text-light);
     }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }
@@ -83,22 +92,25 @@
 
 <div class="af-timeline">
     <div class="af-timeline__inner">
-        <h2 class="af-timeline__heading">Course program</h2>
+        <div class="af-timeline__head">
+            <p class="af-timeline__eyebrow">Three days</p>
+            <h2 class="af-timeline__heading">Course program</h2>
+        </div>
         <div class="af-timeline__list">
             <div class="af-timeline__item">
-                <div class="af-timeline__dot"></div>
+                <div class="af-timeline__dot">1</div>
                 <div class="af-timeline__step">Day 1</div>
                 <h3 class="af-timeline__title">Foundation: Water & Color</h3>
                 <p class="af-timeline__text">Understanding how water behaves on paper. Basic washes, color mixing, and finding your first brushstrokes.</p>
             </div>
             <div class="af-timeline__item">
-                <div class="af-timeline__dot"></div>
+                <div class="af-timeline__dot">2</div>
                 <div class="af-timeline__step">Day 2</div>
                 <h3 class="af-timeline__title">Technique: Light & Shadow</h3>
                 <p class="af-timeline__text">Layering, glazing, and creating depth. Painting a landscape from reference with live guidance.</p>
             </div>
             <div class="af-timeline__item">
-                <div class="af-timeline__dot"></div>
+                <div class="af-timeline__dot">3</div>
                 <div class="af-timeline__step">Day 3</div>
                 <h3 class="af-timeline__title">Expression: Your Own Voice</h3>
                 <p class="af-timeline__text">Bringing it all together. Paint your own composition with personal feedback from Nicolás.</p>

@@ -3,34 +3,38 @@
 <style>
 
     .af-team {
-        --af-primary: #de6518; --af-bg: #ffffff; --af-card-bg: #f4efe9;
-        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+         --af-bg: #ffffff; --af-card-bg: #ffffff;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
         font-family: var(--af-font-body); color: var(--af-text);
     }
     .af-team__inner { max-width: 1200px; margin: 0 auto; }
-    .af-team__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(24px, 4vw, 48px); }
-    .af-team__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.5vw, 28px); }
-    .af-team__card { background: var(--af-card-bg); border-radius: var(--af-radius); overflow: hidden; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-    .af-team__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .af-team__head { text-align: center; margin-bottom: clamp(28px, 4vw, 48px); }
+    .af-team__eyebrow { font-family: var(--af-font-heading); font-style: italic; font-weight: 400; font-size: clamp(18px, 1.6vw, 21px); color: var(--af-orange-bright); margin-bottom: 8px; }
+    .af-team__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 38px); font-weight: 700; text-align: center; letter-spacing: -0.01em; margin: 0; }
+    .af-team__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.5vw, 24px); }
+    .af-team__card { background: var(--af-card-bg); border-radius: var(--af-radius-lg); overflow: hidden; text-align: left; box-shadow: var(--af-shadow-card); transition: transform 0.3s, box-shadow 0.3s; }
+    .af-team__card:hover { transform: translateY(-3px); box-shadow: var(--af-shadow-card-hover); }
     .af-team__card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
-    .af-team__card-body { padding: clamp(16px, 2.5vw, 24px); }
-    .af-team__name { font-family: var(--af-font-heading); font-size: clamp(18px, 1.8vw, 21px); font-weight: 700; margin-bottom: 4px; }
-    .af-team__role { font-size: clamp(16px, 1.2vw, 18px); color: var(--af-primary); font-weight: 600; margin-bottom: 8px; }
-    .af-team__bio { font-size: clamp(16px, 1.3vw, 18px); line-height: 1.6; color: var(--af-text-light); }
+    .af-team__card-body { padding: clamp(18px, 2.5vw, 24px) clamp(20px, 2.5vw, 24px) clamp(22px, 2.5vw, 26px); }
+    .af-team__name { font-family: var(--af-font-heading); font-size: clamp(18px, 1.8vw, 21px); font-weight: 700; margin-bottom: 3px; }
+    .af-team__role { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--af-orange-bright); font-weight: 600; margin-bottom: 10px; }
+    .af-team__bio { font-size: clamp(14px, 1.3vw, 15px); line-height: 1.55; color: var(--af-text-light); }
     @media (max-width: 768px) { .af-team__grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }
   </style>
 <div class="af-team">
     <div class="af-team__inner">
-        <h2 class="af-team__heading">Our instructors</h2>
+        <div class="af-team__head">
+            <p class="af-team__eyebrow">The faculty</p>
+            <h2 class="af-team__heading">Our instructors</h2>
+        </div>
         <div class="af-team__grid">
             <div class="af-team__card">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Instructor">

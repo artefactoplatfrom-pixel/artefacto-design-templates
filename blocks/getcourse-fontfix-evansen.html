@@ -41,7 +41,7 @@
 .block-set .custom-columns-item__text {
   font-size: 18px !important;
   line-height: 1.65 !important;
-  color: #3b3b3b !important; /* Solid color вместо rgba 0.7-0.8 → 9:1 на белом */
+  color: var(--af-text) !important; /* Solid color вместо rgba 0.7-0.8 → 9:1 на белом */
 }
 
 /* FAQ body text */
@@ -50,7 +50,7 @@
 .block-set .faq-item__list-item {
   font-size: 18px !important;
   line-height: 1.65 !important;
-  color: #3b3b3b !important;
+  color: var(--af-text) !important;
 }
 
 /* Тарифы / Pricing */
@@ -394,31 +394,31 @@ html .footer-item__text--sm {
    Решение: заменяем прозрачные цвета на solid с контрастом 7:1+
 */
 
-/* Body text с opacity — переводим в solid #3b3b3b (9:1 на белом) */
+/* Body text с opacity — переводим в solid var(--af-text) (9:1 на белом) */
 .block-set .program-card__list-item,
 .block-set .step-to-goin__list-descr,
 .block-set .achive-card__descr,
 .block-set .grid-wrapper-card__descr,
 .block-set .support-and-feedback-card__list-item,
 .block-set .instructor__list-item {
-  color: #3b3b3b !important;
+  color: var(--af-text) !important;
 }
 
-/* Footer subtitle — был rgba(255,255,255,0.5) на #3b3b3b → ~4.2:1 FAIL */
+/* Footer subtitle — был rgba(255,255,255,0.5) на var(--af-text) → ~4.2:1 FAIL */
 .footer-item__subtitle {
   color: rgba(255, 255, 255, 0.8) !important; /* → ~7.7:1 PASS */
 }
 
-/* Footer links/text — rgba(255,255,255,0.8) на #3b3b3b → ~7.7:1 PASS — OK */
+/* Footer links/text — rgba(255,255,255,0.8) на var(--af-text) → ~7.7:1 PASS — OK */
 
 /* Nav links color — rgba(59,59,59,0.8) → 6.3:1 FAIL на page-bg #f4efe9 */
 .header__nav-link:is(:link, :visited) {
-  color: #3b3b3b !important; /* Solid → ~8.5:1 на #f4efe9 */
+  color: var(--af-text) !important; /* Solid → ~8.5:1 на #f4efe9 */
 }
 
 /* Submenu links */
 .header__submenu-link:is(:link, :visited) {
-  color: #3b3b3b !important;
+  color: var(--af-text) !important;
 }
 
 /* Modal checkbox text — rgba opacity */

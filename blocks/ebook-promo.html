@@ -2,12 +2,12 @@
 <!-- Artefacto Block: E-Book Promo — промо-блок с изображением книги и CTA -->
 <style>
     .af-ebook {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-bg: #f4efe9;
         --af-card-bg: #ffffff;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
+        
+        
         --af-border: #e0d6cc;
         --af-radius: 20px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
@@ -99,7 +99,7 @@
         align-items: center;
         justify-content: center;
         padding: clamp(14px, 2vw, 18px) clamp(32px, 4vw, 48px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         background: var(--af-primary);
         color: #fff;
         font-family: var(--af-font-body);
@@ -131,7 +131,7 @@
     }
 
     *:focus-visible {
-        outline: 3px solid var(--af-primary, #de6518);
+        outline: 3px solid var(--af-primary);
         outline-offset: 3px;
         border-radius: 4px;
     }

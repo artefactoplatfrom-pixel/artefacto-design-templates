@@ -3,12 +3,9 @@
 <style>
 
     .af-video-play {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-bg: #f4efe9;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg);
@@ -19,23 +16,24 @@
     .af-video-play__inner { max-width: 960px; margin: 0 auto; }
     .af-video-play__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(24px, 3.5vw, 40px);
+        font-size: clamp(24px, 3.5vw, 38px);
         font-weight: 700; text-align: center;
-        margin-bottom: clamp(24px, 4vw, 48px);
+        letter-spacing: -0.01em;
+        margin-bottom: clamp(12px, 2vw, 18px);
     }
     .af-video-play__sub {
         text-align: center; color: var(--af-text-light);
-        font-size: clamp(18px, 1.5vw, 20px);
+        font-size: clamp(16px, 1.5vw, 18px);
         margin-bottom: clamp(32px, 5vw, 48px);
         line-height: 1.6;
     }
     .af-video-play__wrapper {
         position: relative;
-        border-radius: var(--af-radius);
+        border-radius: var(--af-radius-lg);
         overflow: hidden;
         aspect-ratio: 16/9;
         cursor: pointer;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        box-shadow: var(--af-shadow-card);
     }
     .af-video-play__poster {
         width: 100%; height: 100%;
@@ -58,10 +56,10 @@
     min-height: 48px;
         width: clamp(64px, 10vw, 88px);
         height: clamp(64px, 10vw, 88px);
-        background: var(--af-primary);
+        background: var(--af-orange-bright);
         border-radius: 50%;
         display: flex; align-items: center; justify-content: center;
-        box-shadow: 0 4px 24px rgba(222,101,24,0.4);
+        box-shadow: var(--af-shadow-cta);
         transition: transform 0.3s, background 0.3s;
     }
     .af-video-play__wrapper:hover .af-video-play__btn {
@@ -76,8 +74,8 @@
     .af-video-play__caption {
         text-align: center;
         margin-top: 16px;
-        font-size: clamp(16px, 1.3vw, 18px);
-        color: var(--af-text-light);
+        font-size: clamp(14px, 1.3vw, 15px);
+        color: var(--af-text-muted);
     }
     .af-video-play__iframe {
         width: 100%; height: 100%;
@@ -85,7 +83,7 @@
     }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }

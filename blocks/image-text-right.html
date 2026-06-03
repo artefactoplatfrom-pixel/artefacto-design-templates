@@ -3,11 +3,10 @@
 <style>
 
     .af-imgtxt-r {
-        --af-primary: #de6518;
+        
         --af-bg: #f4efe9;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
+        
+        
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
@@ -70,7 +69,7 @@
         display: inline-flex;
         align-self: center;
         padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 32px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         background: var(--af-primary);
         color: #fff;
         font-family: var(--af-font-body);
@@ -83,25 +82,25 @@
     }
 
     .af-imgtxt-r__btn {
-        box-shadow: 0 4px 14px rgba(222, 101, 24, 0.25);
+        box-shadow: 0 4px 14px rgba(237, 112, 30, 0.25);
     }
 
     .af-imgtxt-r__btn:hover {
-        background: #c55a15;
+        background: var(--af-primary-hover);
         transform: translateY(-3px);
-        box-shadow: 0 8px 28px rgba(222, 101, 24, 0.4);
+        box-shadow: 0 8px 28px rgba(237, 112, 30, 0.4);
     }
 
     .af-imgtxt-r__btn:active {
         transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(222, 101, 24, 0.2);
+        box-shadow: 0 2px 8px rgba(237, 112, 30, 0.2);
     }
 
     @media (max-width: 768px) {
         .af-imgtxt-r__inner { grid-template-columns: 1fr; }
         .af-imgtxt-r__image { order: -1; }
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 
 <div class="af-imgtxt-r">

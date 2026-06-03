@@ -43,7 +43,7 @@
 .block-set td,
 .block-set th,
 .block-set span {
-  color: #3b3b3b !important;
+  color: var(--af-text) !important;
 }
 
 /* Исключения: не ломаем цвет внутри кнопок, цен, бейджей, тёмных секций */
@@ -71,14 +71,14 @@
 .gc-user-logined .header__nav-link:is(:link, :visited, :hover, :active) {
   font-size: clamp(16px, 1.6vw, 18px) !important;
   line-height: 1.4 !important;
-  color: #3b3b3b !important;
+  color: var(--af-text) !important;
 }
 
 /* Submenu */
 .header__submenu-link:is(:active, :visited, :hover, :link) {
   font-size: 18px !important;
   line-height: 1.4 !important;
-  color: #3b3b3b !important;
+  color: var(--af-text) !important;
 }
 
 /* Auth button — GC default 12-14px, padding ~30px height */

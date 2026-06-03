@@ -3,8 +3,8 @@
 <style>
 
     .af-accordion {
-        --af-primary: #de6518; --af-bg: #f4efe9; --af-card-bg: #ffffff;
-        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 12px;
+         --af-bg: #f4efe9; --af-card-bg: #ffffff;
+          --af-radius: 12px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
@@ -25,7 +25,7 @@
     .af-accordion__body { padding: 0 clamp(16px, 2.5vw, 24px) clamp(16px, 2.5vw, 24px); }
     .af-accordion__body p { font-size: clamp(18px, 1.5vw, 20px); line-height: 1.7; color: var(--af-text-light); margin-bottom: 8px; }
     .af-accordion__body p:last-child { margin-bottom: 0; }
-    .af-accordion__tag { display: inline-block; font-size: 16px; font-weight: 700; color: var(--af-primary); background: rgba(222,101,24,0.1); padding: 2px 10px; border-radius: 10px; margin-bottom: 12px; }
+    .af-accordion__tag { display: inline-block; font-size: 16px; font-weight: 700; color: var(--af-primary); background: rgba(237,112,30,0.1); padding: 2px 10px; border-radius: 10px; margin-bottom: 12px; }
 
     .af-accordion__img {
         width: 100%;
@@ -42,7 +42,7 @@
         }
     }
 
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 <div class="af-accordion">
     <div class="af-accordion__inner">

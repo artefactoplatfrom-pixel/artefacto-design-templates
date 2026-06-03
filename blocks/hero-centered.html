@@ -3,11 +3,10 @@
 <style>
 
     .af-hero-center {
-        --af-primary: #de6518;
+        
         --af-bg: #f4efe9;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
-        --af-radius: 16px;
+        
+        
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
 
@@ -62,7 +61,7 @@
     min-height: 48px;
         display: inline-flex;
         padding: clamp(12px, 2vw, 16px) clamp(28px, 4vw, 44px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         font-family: var(--af-font-body);
         font-size: clamp(18px, 1.5vw, 20px);
         font-weight: 700;
@@ -76,18 +75,18 @@
         background: var(--af-primary);
         color: #fff;
         border-color: var(--af-primary);
-        box-shadow: 0 4px 14px rgba(222, 101, 24, 0.25);
+        box-shadow: 0 4px 14px rgba(237, 112, 30, 0.25);
     }
 
     .af-hero-center__btn--primary:hover {
-        background: #c55a15;
+        background: var(--af-primary-hover);
         transform: translateY(-3px);
-        box-shadow: 0 8px 28px rgba(222, 101, 24, 0.4);
+        box-shadow: 0 8px 28px rgba(237, 112, 30, 0.4);
     }
 
     .af-hero-center__btn--primary:active {
         transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(222, 101, 24, 0.2);
+        box-shadow: 0 2px 8px rgba(237, 112, 30, 0.2);
     }
 
     .af-hero-center__image img {
@@ -117,7 +116,7 @@
             max-height: 200px;
         }
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 
 <div class="af-hero-center">

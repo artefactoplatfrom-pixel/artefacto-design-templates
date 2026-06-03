@@ -3,13 +3,12 @@
 <style>
 
     .af-countdown {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
-        --af-bg: #3b3b3b;
+        
+        
+        --af-bg: #232020;
         --af-card-bg: rgba(255,255,255,0.08);
         --af-text: #ffffff;
         --af-text-light: rgba(255,255,255,0.85);
-        --af-radius: 16px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
         background: var(--af-bg);
@@ -20,15 +19,17 @@
     }
     .af-countdown__inner { max-width: 800px; margin: 0 auto; }
     .af-countdown__label {
-        font-size: clamp(16px, 1.3vw, 18px);
-        font-weight: 600; text-transform: uppercase;
-        letter-spacing: 0.1em; color: var(--af-primary);
+        font-family: var(--af-font-heading);
+        font-style: italic; font-weight: 400;
+        font-size: clamp(18px, 1.6vw, 21px);
+        color: var(--af-orange);
         margin-bottom: 8px;
     }
     .af-countdown__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(24px, 3.5vw, 40px);
-        font-weight: 700; margin-bottom: clamp(24px, 4vw, 48px);
+        font-size: clamp(24px, 3.5vw, 38px);
+        font-weight: 700; letter-spacing: -0.01em;
+        margin-bottom: clamp(24px, 4vw, 48px);
     }
     .af-countdown__timer {
         display: flex; justify-content: center;
@@ -37,7 +38,7 @@
     }
     .af-countdown__unit {
         background: var(--af-card-bg);
-        border-radius: var(--af-radius);
+        border-radius: var(--af-radius-lg);
         padding: clamp(16px, 3vw, 28px) clamp(20px, 4vw, 36px);
         min-width: clamp(70px, 12vw, 110px);
     }
@@ -45,26 +46,29 @@
         font-family: var(--af-font-heading);
         font-size: clamp(32px, 5vw, 56px);
         font-weight: 700; line-height: 1.1;
+        color: var(--af-orange-bright);
     }
     .af-countdown__text {
-        font-size: clamp(16px, 1.1vw, 18px);
+        font-size: clamp(13px, 1.1vw, 14px);
         color: var(--af-text-light);
-        margin-top: 4px; text-transform: uppercase;
-        letter-spacing: 0.05em;
+        margin-top: 6px; text-transform: uppercase;
+        letter-spacing: 0.08em; font-weight: 600;
     }
     .af-countdown__btn {
     min-height: 48px;
         display: inline-block;
         background: var(--af-primary); color: #fff;
         padding: clamp(14px, 2vw, 18px) clamp(32px, 5vw, 48px);
-        border-radius: 80px; font-weight: 700;
-        font-size: clamp(18px, 1.4vw, 20px);
+        border-radius: var(--af-radius-sm); font-weight: 700;
+        font-size: clamp(17px, 1.4vw, 19px);
         text-decoration: none; border: none; cursor: pointer;
-        transition: background 0.3s, transform 0.2s;
+        box-shadow: var(--af-shadow-cta-resting);
+        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
     }
     .af-countdown__btn:hover {
         background: var(--af-primary-hover);
         transform: translateY(-2px);
+        box-shadow: var(--af-shadow-cta);
     }
 
     @media (max-width: 480px) {
@@ -72,7 +76,7 @@
     }
 
     *:focus-visible {
-      outline: 3px solid var(--af-primary, #de6518);
+      outline: 3px solid var(--af-primary);
       outline-offset: 3px;
       border-radius: 4px;
     }

@@ -3,12 +3,12 @@
 <style>
 
     .af-cta-img {
-        --af-primary: #de6518;
-        --af-primary-hover: #c55a15;
+        
+        
         --af-bg: #f4efe9;
         --af-card-bg: #ffffff;
-        --af-text: #3b3b3b;
-        --af-text-light: #4a4a4a;
+        
+        
         --af-radius: 20px;
         --af-font-heading: 'Source Serif 4', 'Georgia', serif;
         --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
@@ -50,7 +50,7 @@
         display: inline-flex;
         align-self: center;
         padding: clamp(12px, 2vw, 16px) clamp(28px, 4vw, 40px);
-        border-radius: 50px;
+        border-radius: var(--af-radius-sm);
         background: #fff;
         color: var(--af-primary);
         font-family: var(--af-font-body);
@@ -85,7 +85,7 @@
         .af-cta-img__image { order: -1; }
         .af-cta-img__image img { aspect-ratio: 16/9; min-height: auto; }
     }
-    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+    :focus-visible{outline:3px solid var(--af-primary);outline-offset:3px;border-radius:4px;}
 </style>
 
 <div class="af-cta-img">
