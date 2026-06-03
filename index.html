@@ -924,7 +924,9 @@
         let AF_TOKENS_CSS = '';
         async function loadTokens() {
             if (AF_TOKENS_CSS) return;
-            try { AF_TOKENS_CSS = await (await fetch('css/af-tokens.css')).text(); } catch {}
+            // ?v bumped whenever af-tokens.css changes — busts the Cloudflare edge
+            // cache (css served with max-age=7d) so previews pick up new tokens/.af-cta-btn.
+            try { AF_TOKENS_CSS = await (await fetch('css/af-tokens.css?v=20260603-cta')).text(); } catch {}
         }
         function withTokens(html) {
             return AF_TOKENS_CSS ? `<style id="af-tokens">${AF_TOKENS_CSS}</style>` + html : html;
